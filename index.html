@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<style>
+  * {
+    box-sizing: border-box;
+
+
+@font-face {
+  font-family: 'articlebutton'; /* A name you choose to refer to the font */
+  src: url('articlebutton.woff') format('woff'),
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps prevent render-blocking */
+}
+
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: calc(12px + 2vmin);
+  }
+  .container {
+    display: block;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: hidden;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+  }
+  .content-header-container, .about-container, .third-container {
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    flex-shrink: 0;
+	  margin-bottom: 0px;
+  }
+  .content-header-container {
+    font-size: 24px;
+    background-color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+	background-image: url("top-backe.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+  }
+
+  .about-container {
+    font-size: 16px;
+    text-align: center;
+    background-color: lightcoral;
+    display: grid;
+	  grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "title title"
+                         "buttons content";
+    background-image: url("zmejgr/ey.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
+  .third-container {
+    background-color: blue;
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 0px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #333;
+    background-image: url("zmejwgrey.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
+
+   .final-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+
+  } 
+  @media (orientation:portrait) {
+    .about-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas: 
+                           "buttons"
+                           "title"
+                          "content";
+    }
+  }
+  .signin-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .signin-button {
+    padding: 10px 20px;
+	margin-top: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  @media (orientation:portrait) {
+    .signin-button {
+      font-size: 1em;
+    }
+  }
+  .btn-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  margin: 20px;
+  margin-left: 40px;
+  grid-area: "buttons";
+}
+  .input-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  .buttonstyle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 425px;
+    height: 89px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+	font-family: articlebutton;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+	font-family: articlebutton;
+	font-size: 26px;
+	color: white;
+    
+    /* Настройки фона: картинка по центру */
+    background-image: url('button1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
+  }
+
+  .buttonstyle:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+  
+  
+  
+  header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+ .text-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: rgba(245, 40, 145, 0);
+  padding: 10px;
+}
+
+
+ .text-grid div {
+  background-color: rgba(245, 40, 145, 0);
+  border: 0px solid black;
+  margin: 60px;
+  padding: 40px;
+  font-size: 30px;
+  text-align: left;
+  color: white;
+}
+
+
+ .title-info {
+  margin:20px;
+  margin-left: 40px;
+  grid-area: title;
+  font-size: 80px;
+  text-align: left;
+  color: white;
+  
+}
+
+
+.pText {
+	color: white;
+	margin: 20px;
+  margin-right: 40px;
+  margin-left: 100px;
+	font-size: 1.5em;
+	text-align: justify;
+}
+
+
+.lang {
+	grid-area: title;
+	
+}
+</style>
+
+</head>
+<body>
+
+	<script>
+        function changeText(newText) {
+            document.getElementById('result').textContent = ML(newText);
+        }
+        function changeLang(newLang) {
+            const select = document.querySelector("select");
+            select.value = newLang;
+            window.location.search = `?lang=${newLang}`;
+        }
+    </script>
+  <div class="container">
+      <div style="position: absolute; right: 20px; top: 20px;"><select name="" id="langselector" onchange="changeLang(this.value)">
+        <option value="en">English</option>
+        <option value="ru">Russian</option> 
+        <option value="sr">Serbian</option>
+      </select></div>
+  <div class="content-container">
+    <div class="content-header-container" style="margin-bottom: 0px;">
+		<header>
+
+			<img src="zmey.svg" width="250px"/>
+		</header>
+	
+	
+		<div class="text-grid">
+		  <div id="culture">oživljavamo kulturu ovde i sada</div>
+		  <div></div>
+		  <div id="chance">tvoja šansa</div>
+
+		</div>
+    </div>
+    <div class="about-container">
+      <div id="aboutus" class="title-info">ALL INFORMATION ABOUT US</div>
+		  <div class="btn-group">
+			<label id="article1"; class="buttonstyle"; onclick="changeText('We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.')">
+			  who are we?
+			</label>
+				
+			<label id="article2"; class="buttonstyle"; onclick="changeText('Целью нашей деятельности является помощь увлечённым дизайнерам и артистам в поиске единомышленников и развитии своих навыков, мы твёрдо убеждены в том что человек, по настоящему заинтересованный в своём деле сможет обучиться ему с каких бы низов не приходилось подниматься.')">
+			  our goal
+			</label>
+
+			<label id="article3"; class="buttonstyle"; onclick="changeText('Всем тем, что попадётся нам под руку - коллекции значков, зины, плакаты, видео, фото, музыка, лимитом являются только наши навыки и желание, также мы проводим мастер-классы, кино и игро вечера.')">
+			  what are we doing?
+			</label>
+      </div>
+      <div id="result" class="pText" style="grid-area: content;">Мы - группа учеников, озабоченная поднятием культурного и профессионального уровня деятельности в дизайнерских школах, у нас разные представления о культуре, у нас разное прошлое, но нас объединяет желание выразить своё мастерство и видение шире чем то, что предлагают нам из коробки.</div>
+    </div>
+
+     <div class="third-container">
+        <div class="title-info">JOIN US</div>
+        <div class="pText" style="grid-area: content;">Если тебе близны наши идеи и ты хочешь развиваться в творческом направлении, то мы будем рады видеть тебя в нашем коллективе, мы не требуем от тебя каких-то особых навыков, нам важно твоё желание и стремление к развитию, а всему остальному мы научим тебя сами.</div>
+     </div>   
+  </div>
+  </div>
+  <script>
+      window.onload = () => {
+          document.getElementById("langselector").value = getLang();
+          document.getElementById("aboutus").innerText = ML("ALL INFORMATION ABOUT US")
+          document.getElementById("article1").innerText = ML("who are we?")
+          document.getElementById("article2").innerText = ML("our goal")
+          document.getElementById("article3").innerText = ML("what are we doing?")
+          document.getElementById("culture").innerText = ML("reviving cultire right now and here")
+          document.getElementById("chance").innerText = ML("your chance")
+      }
+    function onSignIn() {
+      // Здесь можно добавить логику для обработки входа пользователя
+      alert('Sign in button clicked!');
+      }
+
+
+    function getLang() {
+        const params = window.location.search.substring(1).split("&");
+        let lang = window.navigator.language.split("-")[0];
+        const lang_param = params.filter(v => v.split("=")[0] === "lang");
+        if (lang_param !== undefined && lang_param.length > 0) lang = lang_param[0].split("=")[1];
+        return lang;
+      }
+      const mlStrings = new Map([
+          [
+              "ALL INFORMATION ABOUT US" ,
+              new Map([
+                  ["ru", "ВСЯ ИНФОРМАЦИЯ О НАС"],
+                  ["sr", "SVE INFROMACIJA ZA NAS"],
+              ]),
+          ],
+          [
+              "who are we?",
+              new Map([
+                  ["ru", "кто мы?"],
+                  ["sr", "ko smo mi?"],
+              ]),
+          ],
+          [
+              "our goal",
+              new Map([
+                  ["ru", "наша цель"],
+                  ["sr", "naš cilj"],
+              ]),
+          ],
+          [
+              "what are we doing?",
+              new Map([
+                  ["ru", "чем мы занимаемся?"],
+                  ["sr", "šta mi radimo?"],
+              ]),
+          ],
+                    [
+              "reviving cultire right now and here" ,
+              new Map([
+                  ["ru", "возрождаем культуру прямо здесь и сейчас"],
+                  ["sr", "oživljavamo kulturu ovde i sada"]
+              ]),
+          ],
+
+          [
+                  "your chance" ,
+                  new Map([
+                      ["ru", "твой шанс"],
+                      ["sr", "tvoja šansa"]
+                  ]),
+              ],
+              [
+                  "We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.",
+              
+              new Map([
+                  ["ru", "Мы - группа учеников, озабоченная поднятием культурного и профессионального уровня деятельности в дизайнерских школах, у нас разные представления о культуре, у нас разное прошлое, но нас объединяет желание выразить своё мастерство и видение шире чем то, что предлагают нам из коробки."],
+                  ["sr", "srМы - группа учеников, озабоченная поднятием культурного и профессионального уровня деятельности в дизайнерских школах, у нас разные представления о культуре, у нас разное прошлое, но нас объединяет желание выразить своё мастерство и видение шире чем то, что предлагают нам из коробки."]  
+                ])
+              ]
+    ]);
+
+      function ML(str, lang) {
+          if (lang === undefined) {
+              lang = getLang();
+          }
+          if (str === undefined) {
+              console.warn("Empty or undefined string");
+              return ``;
+          }
+          if (lang === undefined) return str;
+          if (!mlStrings.has(str)) {
+              console.warn(`String '${str}' is absent`);
+              return str;
+          }
+          const el = mlStrings.get(str);
+          if (!el?.has(lang)) return str;
+          if (el.get(lang) === undefined) return str;
+          return el.get(lang);
+      }
+  </script>
+</body>
+</html>
