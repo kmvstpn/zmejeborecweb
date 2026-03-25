@@ -3,15 +3,22 @@
   }
 
 @font-face {
-  font-family: 'articlebutton'; /* A name you choose to refer to the font */
-  src: url('articlebutton.woff') 
-  format('woff'); /* The format of the font file */
+  font-family: 'articlebutton'; 
+  src: url('articlebutton.woff') format('woff'); 
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Helps prevent render-blocking */
+  font-display: swap;
 }
 
-  
+@font-face {
+  font-family: 'title';
+  src: url('titleheh.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
   html, body {
     margin: 0;
     padding: 0;
@@ -19,6 +26,9 @@
     width: 100%;
     font-size: calc(12px + 2vmin);
   }
+
+
+  
   .container {
     display: block;
     margin: 0;
@@ -50,6 +60,7 @@
   }
   .content-header-container {
   font-size: 24px;
+  text-align: center;
   font-weight: bold;
   margin-bottom: 20px;
 	background-image: url("top-back.gif");
@@ -149,7 +160,6 @@
     font-weight: bold;
 	  font-family: articlebutton;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-	  font-family: articlebutton;
 	  font-size: 26px;
 	  color: white;
     
@@ -207,6 +217,9 @@
   font-size: 80px;
   text-align: left;
   color: white;
+  font-family: title;
+  font-optical-sizing: auto;
+  font-weight: 650;
   
 }
 
