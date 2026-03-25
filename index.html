@@ -2,9 +2,12 @@
 <html>
 <head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="styles.css">
 <meta charset="utf-8">
 
+<title>Zmejeborec</title>
 </head>
 <body>
 
@@ -19,18 +22,21 @@
         }
     </script>
   <div class="container">
-      <div style="position: absolute; right: 20px; top: 20px;"><select name="" id="langselector" onchange="changeLang(this.value)">
-        <option value="sr">Srpski</option>        
-        <option value="ru">Русский</option> 
-        <option value="en">English</option>
-      </select></div>
+      <div class="lang-switch">
+        <select name="" id="langselector" onchange="changeLang(this.value)">
+        <option value="sr">🇷🇸</option>
+        <option value="en">🇬🇧</option>
+        <option value="ru">🇷🇺</option>
+      </select>
+    </div>
   <div class="content-container">
     <div class="content-header-container" style="margin-bottom: 0px;">
-		<header style="display: flex; align-items: center;">
-            <a href="https://www.instagram.com/zmejeborec/">
-                <img src="instagram.png" alt="Instagram" style="width:30px; height:30px;">
-            </a>            
-			<img src="zmey.svg" width="250px"/>
+		<header>
+      <a href="https://www.instagram.com/zmejeborec/">
+          <img src="instagram.png" alt="Instagram" style="width:30px; height:30px;">
+      </a>            
+
+      <img class="logo" src="zmey.svg" width="250px"/>
 		</header>
 	
 	
@@ -48,11 +54,11 @@
 			  who are we?
 			</label>
 				
-			<label id="article2"; class="buttonstyle"; onclick="changeText('Целью нашей деятельности является помощь увлечённым дизайнерам и артистам в поиске единомышленников и развитии своих навыков, мы твёрдо убеждены в том что человек, по настоящему заинтересованный в своём деле сможет обучиться ему с каких бы низов не приходилось подниматься.')">
+			<label id="article2"; class="buttonstyle"; onclick="changeText('Our goal is to help passionate designers and artists find like-minded people and develop their skills. We firmly believe that anyone truly interested in their craft can learn it, no matter how humble their background.')">
 			  our goal
 			</label>
 
-			<label id="article3"; class="buttonstyle"; onclick="changeText('Всем тем, что попадётся нам под руку - коллекции значков, зины, плакаты, видео, фото, музыка, лимитом являются только наши навыки и желание, также мы проводим мастер-классы, кино и игро вечера.')">
+			<label id="article3"; class="buttonstyle"; onclick="changeText('We use whatever we can get our hands on—pin collections, zines, posters, videos, photos, music. We\'re limited only by our skills and desire. We host workshops, movie nights, and game nights.')">
 			  what are we doing?
 			</label>
       </div>
@@ -60,8 +66,8 @@
     </div>
 
      <div class="third-container">
-        <div class="title-info">JOIN US</div>
-        <div class="pText" style="grid-area: content;">Если тебе близны наши идеи и ты хочешь развиваться в творческом направлении, то мы будем рады видеть тебя в нашем коллективе, мы не требуем от тебя каких-то особых навыков, нам важно твоё желание и стремление к развитию, а всему остальному мы научим тебя сами.</div>
+        <div class="title-info" id="joinustitle">JOIN US</div>
+        <div class="pText" style="grid-area: content;" id="joinus">If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.</div>
      </div>   
   </div>
   </div>
@@ -75,6 +81,9 @@
           document.getElementById("culture").innerText = ML("reviving cultire right now and here")
           document.getElementById("chance").innerText = ML("your chance")
           document.getElementById("result").innerText = ML("We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.")
+          document.getElementById("joinus").innerText = ML("If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.")
+          document.getElementById("joinustitle").innerText = ML("JOIN US")
+
       }
     function onSignIn() {
       alert('Sign in button clicked!');
@@ -137,7 +146,35 @@
               
               new Map([
                   ["ru", "Мы - группа учеников, озабоченная поднятием культурного и профессионального уровня деятельности в дизайнерских школах, у нас разные представления о культуре, у нас разное прошлое, но нас объединяет желание выразить своё мастерство и видение шире чем то, что предлагают нам из коробки."],
-                  ["sr", "srМы - группа учеников, озабоченная поднятием культурного и профессионального уровня деятельности в дизайнерских школах, у нас разные представления о культуре, у нас разное прошлое, но нас объединяет желание выразить своё мастерство и видение шире чем то, что предлагают нам из коробки."]  
+                  ["sr", "Mi smo grupa učenika, zabrinuta za podizanje kulturnog i profesionalnog nivoa aktivnosti u dizajnerskim školama, imamo različite poglede na kulturu, imamo različitu prošlost, ali nas ujedinjuje želja da izrazimo svoje veštine i viziju šire nego što nam se nudi iz kutije."]  
+                ])
+              ],
+              [
+                "Our goal is to help passionate designers and artists find like-minded people and develop their skills. We firmly believe that anyone truly interested in their craft can learn it, no matter how humble their background.",
+                new Map([
+                    ["ru", "Целью нашей деятельности является помощь увлечённым дизайнерам и артистам в поиске единомышленников и развитии своих навыков, мы твёрдо убеждены в том что человек, по настоящему заинтересованный в своём деле сможет обучиться ему с каких бы низов не приходилось подниматься."],
+                    ["sr", "Cilj naše aktivnosti je pomoć strastvenim dizajnerima i umetnicima u pronalaženju istomišljenika i razvoju svojih veština, mi smo čvrsto uvereni da čovek, koji je zaista zainteresovan za svoj posao, može da nauči to bez obzira na to sa kojih niskih nivoa mora da se penje."]
+                ])
+              ],
+              [
+                "We use whatever we can get our hands on—pin collections, zines, posters, videos, photos, music. We're limited only by our skills and desire. We host workshops, movie nights, and game nights.",
+                new Map([
+                    ["ru", "Всем, что попадётся нам под руку - коллекциями значков, зинами, плакатами, видео, фото, музыкой. Нас ограничивают являются только наши навыки и желание. Мы проводим мастер-классы, кино- и игро-вечера."],
+                    ["sr", "Svim što nam padne pod ruku - kolekcijama znački, zinama, plakatima, video, foto, muzikom. Naše jedino ograničenje su naše veštine i želja. Organizujemo masterklasove, kino i igro večeri."]
+                ])
+              ],
+              [
+                "If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.",
+                new Map([
+                    ["ru", "Если тебе близки наши идеи и ты хочешь развиваться в творческом направлении, то мы будем рады видеть тебя в нашем коллективе, мы не требуем от тебя каких-то особых навыков, нам важно твоё желание и стремление к развитию, а всему остальному мы научим тебя сами."],
+                    ["sr", "Ako su ti bliske naše ideje i želiš da se razvijaš u kreativnom pravcu, biće nam drago da te vidimo u našem kolektivu, ne zahtevamo od tebe posebne veštine, važno nam je tvoje želja i težnja za razvojem, a sve ostalo ćemo te naučiti sami."]
+                ])
+              ],
+              [
+                "JOIN US",
+                new Map([
+                    ["ru", "ПРИСОЕДИНЯЙСЯ"],
+                    ["sr", "PRIDRUŽI NAM SE"]
                 ])
               ]
     ]);
