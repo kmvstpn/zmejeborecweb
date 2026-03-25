@@ -66,8 +66,8 @@
     </div>
 
      <div class="third-container">
-        <div class="title-info">JOIN US</div>
-        <div class="pText" style="grid-area: content;">Если тебе близки наши идеи и ты хочешь развиваться в творческом направлении, то мы будем рады видеть тебя в нашем коллективе, мы не требуем от тебя каких-то особых навыков, нам важно твоё желание и стремление к развитию, а всему остальному мы научим тебя сами.</div>
+        <div class="title-info" id="joinustitle">JOIN US</div>
+        <div class="pText" style="grid-area: content;" id="joinus">If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.</div>
      </div>   
   </div>
   </div>
@@ -81,6 +81,9 @@
           document.getElementById("culture").innerText = ML("reviving cultire right now and here")
           document.getElementById("chance").innerText = ML("your chance")
           document.getElementById("result").innerText = ML("We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.")
+          document.getElementById("joinus").innerText = ML("If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.")
+          document.getElementById("joinustitle").innerText = ML("JOIN US")
+
       }
     function onSignIn() {
       alert('Sign in button clicked!');
@@ -160,6 +163,20 @@
                     ["sr", "Svim što nam padne pod ruku - kolekcijama znački, zinama, plakatima, video, foto, muzikom. Naše jedino ograničenje su naše veštine i želja. Organizujemo masterklasove, kino i igro večeri."]
                 ])
               ],
+              [
+                "If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.",
+                new Map([
+                    ["ru", "Если тебе близки наши идеи и ты хочешь развиваться в творческом направлении, то мы будем рады видеть тебя в нашем коллективе, мы не требуем от тебя каких-то особых навыков, нам важно твоё желание и стремление к развитию, а всему остальному мы научим тебя сами."],
+                    ["sr", "Ako su ti bliske naše ideje i želiš da se razvijaš u kreativnom pravcu, biće nam drago da te vidimo u našem kolektivu, ne zahtevamo od tebe posebne veštine, važno nam je tvoje želja i težnja za razvojem, a sve ostalo ćemo te naučiti sami."]
+                ])
+              ],
+              [
+                "JOIN US",
+                new Map([
+                    ["ru", "ПРИСОЕДИНЯЙСЯ"],
+                    ["sr", "PRIDRUŽI NAM SE"]
+                ])
+              ]
     ]);
 
       function ML(str, lang) {
