@@ -1,0 +1,225 @@
+  * {
+    box-sizing: border-box;
+  }
+
+@font-face {
+  font-family: 'articlebutton'; /* A name you choose to refer to the font */
+  src: url('articlebutton.woff') 
+  format('woff'); /* The format of the font file */
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Helps prevent render-blocking */
+}
+
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: calc(12px + 2vmin);
+  }
+  .container {
+    display: block;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: hidden;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --justify-content: center;
+    height: 100%;
+    overflow-y: auto;
+  }
+  .content-header-container, .about-container, .third-container {
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    flex-shrink: 0;
+	  margin-bottom: 0px;
+  }
+  .content-header-container {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+	background-image: url("top-back.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+  }
+
+  .about-container {
+    font-size: 16px;
+    text-align: center;
+    display: grid;
+	  grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "title title"
+                         "buttons content";
+    background-image: url("zmejgrey.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
+  .third-container {
+    min-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 0px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #333;
+    background-image: url("zmejwgrey.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+  }
+
+
+  @media (orientation:portrait) {
+    .about-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas: 
+                           "buttons"
+                           "title"
+                          "content";
+    }
+  }
+  .signin-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .signin-button {
+    padding: 10px 20px;
+	  margin-top: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  @media (orientation:portrait) {
+    .signin-button {
+      font-size: 1em;
+    }
+  }
+  .btn-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  margin: 20px;
+  margin-left: 40px;
+  grid-area: "buttons";
+}
+  .input-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+  .buttonstyle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 425px;
+    height: 89px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+	  font-family: articlebutton;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+	  font-family: articlebutton;
+	  font-size: 26px;
+	  color: white;
+    
+    /* Настройки фона: картинка по центру */
+    background-image: url('button1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
+  }
+
+  .buttonstyle:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+  
+  
+  
+  header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+ .text-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: rgba(245, 40, 145, 0);
+  padding: 10px;
+}
+
+
+ .text-grid div {
+  background-color: rgba(245, 40, 145, 0);
+  border: 0px solid black;
+  margin: 60px;
+  padding: 40px;
+  font-size: 30px;
+  text-align: left;
+  color: white;
+}
+
+
+ .title-info {
+  margin:20px;
+  margin-left: 40px;
+  grid-area: title;
+  font-size: 80px;
+  text-align: left;
+  color: white;
+  
+}
+
+
+.pText {
+	color: white;
+	margin: 20px;
+  margin-right: 40px;
+  margin-left: 100px;
+	font-size: 1.5em;
+	text-align: justify;
+}
+
+
+.lang {
+	grid-area: title;
+	
+}
