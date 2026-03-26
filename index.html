@@ -72,10 +72,8 @@
 
      <div class="third-container">
         <div class="title-info" id="joinustitle">JOIN US</div>
-        <div class="pText" style="grid-area: content;" id="joinus">We are always open to new people, all we need to get to us is a desire to do something and learn, in order to get to us you need to take a small survey on the topic of our community.</div>
-        <label id="article3"; class="buttonstyle"; style="background-image: url('button3.png');" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSedadAnskkcofsfJITaEMMO5lDqk_eTXtB5qeBRW0J1YJI5CQ/viewform'">
-			  take the survey
-        </label>
+        <div class="joinText" style="grid-area: content;" id="joinus">We are always open to new people, all we need to get to us is a desire to do something and learn, in order to get to us you need to take a small survey on the topic of our community.</div>
+        <label id="joinbutton"; class="buttonstylejoin";  onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSedadAnskkcofsfJITaEMMO5lDqk_eTXtB5qeBRW0J1YJI5CQ/viewform'">take the survey</label>
      </div>   
   </div>
   </div>
@@ -91,12 +89,7 @@
           document.getElementById("result").innerText = ML("We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.")
           document.getElementById("joinus").innerText = ML("We are always open to new people, all we need to get to us is a desire to do something and learn, in order to get to us you need to take a small survey on the topic of our community.")
           document.getElementById("joinustitle").innerText = ML("JOIN US")
-
       }
-    function onSignIn() {
-      alert('Sign in button clicked!');
-      }
-
 
     function getLang() {
         const params = window.location.search.substring(1).split("&");
@@ -175,7 +168,7 @@
                 "We are always open to new people, all we need to get to us is a desire to do something and learn, in order to get to us you need to take a small survey on the topic of our community.",
                 new Map([
                     ["ru", "Мы всегда открыты для новых людей, всё что нам нужно чтобы к нам попасть - это желание делать что-либо и учиться, для того чтобы попасть к нам необходимо пройти маленький опрос на тему нашего сообщества."],
-                    ["sr", "Mi smo uvek otvoreni za nove ljude, sve što nam treba da biste se pridružili je želja da radite nešto i učite, da biste nam se pridružili potrebno je da prođete mali upitnik na temu naše zajednice."]
+                    ["sr", "Mi smo uvek otvoreni za nove ljude, sve što nam treba da biste se pridružili je želja da radite nešto i učite, da biste nam se pridružili potrebno je da prođete malu anketu na temu naše zajednice."]
                 ])
               ],
               [
@@ -184,7 +177,16 @@
                     ["ru", "ПРИСОЕДИНЯЙСЯ"],
                     ["sr", "PRIDRUŽI NAM SE"]
                 ])
-              ]
+              ],
+
+              [
+                "take the survey",
+                new Map([
+                    ["ru", "пройти опрос"],
+                    ["sr", "popunite anketu"]
+                ])
+              ],
+                          
     ]);
 
       function ML(str, lang) {
