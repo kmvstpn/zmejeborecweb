@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="icon" type="image/x-icon" href="zmiy.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="styles.css">
 <meta charset="utf-8">
 
-<title>Zmejeborec</title>
+<title>zmejeborec.</title>
 </head>
 <body>
 
@@ -23,42 +23,47 @@
     </script>
   <div class="container">
       <div class="lang-switch">
-        <select name="" id="langselector" onchange="changeLang(this.value)">
-        <option value="sr">🇷🇸</option>
-        <option value="en">🇬🇧</option>
-        <option value="ru">🇷🇺</option>
-      </select>
+          <select name="" id="langselector" onchange="changeLang(this.value)">
+          <option value="sr">🇷🇸</option>
+          <option value="ru">🇷🇺</option>
+          <option value="en">🇬🇧</option>
+        </select>
+            <a class="instagram-link" href="https://www.instagram.com/zmejeborec/">
+          <img src="instagram.png" alt="Instagram" style="width:30px; height:30px;">
+      </a>  
     </div>
   <div class="content-container">
     <div class="content-header-container" style="margin-bottom: 0px;">
-		<header>
-      <a href="https://www.instagram.com/zmejeborec/">
-          <img src="instagram.png" alt="Instagram" style="width:30px; height:30px;">
-      </a>            
-
+		<header>          
       <img class="logo" src="zmey.svg" width="250px"/>
 		</header>
 	
 	
 		<div class="text-grid">
-		  <div id="culture">oživljavamo kulturu ovde i sada</div>
+		  <div style="font-family: infopar;" id="culture">oživljavamo kulturu ovde i sada</div>
 		  <div></div>
-		  <div id="chance">tvoja šansa</div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+		  <div style="font-family: infopar;" id="chance">tvoja šansa</div>
 
 		</div>
     </div>
     <div class="about-container">
       <div id="aboutus" class="title-info">ALL INFORMATION ABOUT US</div>
 		  <div class="btn-group">
-			<label id="article1"; class="buttonstyle"; onclick="changeText('We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.')">
+			<label id="article1"; class="buttonstyle"; style="background-image: url('button1.png');" onclick="changeText('We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.')">
 			  who are we?
 			</label>
 				
-			<label id="article2"; class="buttonstyle"; onclick="changeText('Our goal is to help passionate designers and artists find like-minded people and develop their skills. We firmly believe that anyone truly interested in their craft can learn it, no matter how humble their background.')">
+			<label id="article2"; class="buttonstyle"; style="background-image: url('button2.png');" onclick="changeText('Our goal is to help passionate designers and artists find like-minded people and develop their skills. We firmly believe that anyone truly interested in their craft can learn it, no matter how humble their background.')">
 			  our goal
 			</label>
 
-			<label id="article3"; class="buttonstyle"; onclick="changeText('We use whatever we can get our hands on—pin collections, zines, posters, videos, photos, music. We\'re limited only by our skills and desire. We host workshops, movie nights, and game nights.')">
+			<label id="article3"; class="buttonstyle"; style="background-image: url('button3.png');" onclick="changeText('We use whatever we can get our hands on—pin collections, zines, posters, videos, photos, music. We\'re limited only by our skills and desire. We host workshops, movie nights, and game nights.')">
 			  what are we doing?
 			</label>
       </div>
@@ -67,7 +72,10 @@
 
      <div class="third-container">
         <div class="title-info" id="joinustitle">JOIN US</div>
-        <div class="pText" style="grid-area: content;" id="joinus">If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.</div>
+        <div class="pText" style="grid-area: content;" id="joinus">We are always open to new people, all we need to get to us is a desire to do something and learn, in order to get to us you need to take a small survey on the topic of our community.</div>
+        <label id="article3"; class="buttonstyle"; style="background-image: url('button3.png');" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSedadAnskkcofsfJITaEMMO5lDqk_eTXtB5qeBRW0J1YJI5CQ/viewform'">
+			  take the survey
+        </label>
      </div>   
   </div>
   </div>
@@ -81,7 +89,7 @@
           document.getElementById("culture").innerText = ML("reviving cultire right now and here")
           document.getElementById("chance").innerText = ML("your chance")
           document.getElementById("result").innerText = ML("We are a group of students concerned with raising the cultural and professional level of activity in design schools, we have different views on culture, we have a different past, but we are united by the desire to express our skills and vision more broadly than what is offered to us out of the box.")
-          document.getElementById("joinus").innerText = ML("If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.")
+          document.getElementById("joinus").innerText = ML("We are always open to new people, all we need to get to us is a desire to do something and learn, in order to get to us you need to take a small survey on the topic of our community.")
           document.getElementById("joinustitle").innerText = ML("JOIN US")
 
       }
@@ -102,7 +110,7 @@
               "ALL INFORMATION ABOUT US" ,
               new Map([
                   ["ru", "ВСЯ ИНФОРМАЦИЯ О НАС"],
-                  ["sr", "SVE INFROMACIJA ZA NAS"],
+                  ["sr", "SVE INFORMACIJA ZA NAS"],
               ]),
           ],
           [
@@ -164,10 +172,10 @@
                 ])
               ],
               [
-                "If you are close to our ideas and want to develop in a creative direction, then we will be glad to see you in our team, we do not require any special skills from you, we care about your desire and aspiration for development, and we will teach you everything else ourselves.",
+                "We are always open to new people, all we need to get to us is a desire to do something and learn, in order to get to us you need to take a small survey on the topic of our community.",
                 new Map([
-                    ["ru", "Если тебе близки наши идеи и ты хочешь развиваться в творческом направлении, то мы будем рады видеть тебя в нашем коллективе, мы не требуем от тебя каких-то особых навыков, нам важно твоё желание и стремление к развитию, а всему остальному мы научим тебя сами."],
-                    ["sr", "Ako su ti bliske naše ideje i želiš da se razvijaš u kreativnom pravcu, biće nam drago da te vidimo u našem kolektivu, ne zahtevamo od tebe posebne veštine, važno nam je tvoje želja i težnja za razvojem, a sve ostalo ćemo te naučiti sami."]
+                    ["ru", "Мы всегда открыты для новых людей, всё что нам нужно чтобы к нам попасть - это желание делать что-либо и учиться, для того чтобы попасть к нам необходимо пройти маленький опрос на тему нашего сообщества."],
+                    ["sr", "Mi smo uvek otvoreni za nove ljude, sve što nam treba da biste se pridružili je želja da radite nešto i učite, da biste nam se pridružili potrebno je da prođete mali upitnik na temu naše zajednice."]
                 ])
               ],
               [
